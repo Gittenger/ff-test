@@ -34,7 +34,11 @@ app.use(
 )
 
 // cors, allow all req from all origins
-app.use(cors())
+const corsOptions = {
+	origin: 'http://localhost:3000',
+	credentials: true,
+}
+app.use(cors(corsOptions))
 app.options('*', cors())
 
 // security
