@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {} from './Login.styles'
+import { Redirect } from 'react-router-dom'
 import auth from '../../utils/auth.js'
 
 const { authUser, setAuthToken } = auth
@@ -8,10 +9,11 @@ const Login = () => {
 	const [values, setValues] = useState({
 		email: '',
 		password: '',
+		loggedIn: false,
 		error: '',
 	})
 
-	const { email, password, error } = values
+	const { email, password, error, loggedIn } = values
 
 	const handleChange = (name) => (event) => {
 		setValues({
@@ -32,6 +34,7 @@ const Login = () => {
 				setAuthToken(res, () => {
 					setValues({
 						...values,
+						loggedIn: true,
 						error: '',
 					})
 				})
@@ -69,7 +72,9 @@ const Login = () => {
 		</form>
 	)
 
-	return (
+	return loggedIn ? (
+		<Redirect to="/" />
+	) : (
 		<>
 			<h1>Login Page</h1>
 			{LoginForm()}
