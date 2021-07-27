@@ -11,7 +11,7 @@ import {
 } from './pages/pages-index.js'
 
 const Routes = () => {
-  const { AdminRoute, AdminDashboard } = CIndex
+  const { AdminRoute, AdminDashboard, UploadImage, DeleteImage } = CIndex
   return (
     <BrowserRouter>
       <Switch>
@@ -20,6 +20,8 @@ const Routes = () => {
         <Route path="/gallery" exact component={GalleryPage} />
         <Route path="/about" exact component={AboutPage} />
         <AdminRoute path="/admin" exact component={AdminDashboard} />
+        <AdminRoute path="/upload-images" exact component={UploadImage} />
+        <AdminRoute path="/delete-images" exact component={DeleteImage} />
       </Switch>
     </BrowserRouter>
   )
