@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import {} from './Login.styles'
 import { Redirect } from 'react-router-dom'
 import auth from '../../utils/auth.js'
+import CIndex from '../components.index.js'
 
 const { authUser, setAuthToken } = auth
 
 const Login = () => {
+	const { Layout } = CIndex
 	const [values, setValues] = useState({
 		email: '',
 		password: '',
@@ -75,11 +77,11 @@ const Login = () => {
 	return loggedIn ? (
 		<Redirect to="/" />
 	) : (
-		<>
+		<Layout>
 			<h1>Login Page</h1>
 			{LoginForm()}
 			{showError()}
-		</>
+		</Layout>
 	)
 }
 

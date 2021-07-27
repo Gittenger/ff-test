@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import Carousel from 'react-gallery-carousel'
 import 'react-gallery-carousel/dist/index.css'
+import CIndex from '../components.index.js'
 
 import {} from './Gallery.styles'
 
 const Gallery = () => {
+	const { Layout } = CIndex
 	const [images, setImages] = useState([])
 
 	useEffect(() => {
@@ -25,7 +27,11 @@ const Gallery = () => {
 			.catch((err) => console.error(err))
 	}, [])
 
-	return <Carousel images={images} style={{ height: 600, width: 900 }} />
+	return (
+		<Layout>
+			<Carousel images={images} style={{ height: 600, width: 900 }} />
+		</Layout>
+	)
 }
 
 export default Gallery

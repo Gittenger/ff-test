@@ -4,9 +4,9 @@ import {} from './Home.styles'
 import CIndex from '../components.index.js'
 
 const Home = () => {
-	const { Menu } = CIndex
+	const { Layout } = CIndex
 
-	return <Menu />
+	return <Layout>Home page</Layout>
 }
 
 export default Home
