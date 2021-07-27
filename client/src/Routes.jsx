@@ -3,15 +3,23 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import CIndex from './components/components.index.js'
 
+import {
+  HomePage,
+  AboutPage,
+  GalleryPage,
+  LoginPage,
+} from './pages/pages-index.js'
+
 const Routes = () => {
-  const { Home, Login, Gallery, AdminRoute, AdminDashboard } = CIndex
+  const { AdminRoute, AdminDashboard } = CIndex
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/gallery" exact component={Gallery} />
-        <AdminRoute path="/admin/dashboard" exact component={AdminDashboard} />
+        <Route path="/" exact component={HomePage} />
+        <Route path="/login" exact component={LoginPage} />
+        <Route path="/gallery" exact component={GalleryPage} />
+        <Route path="/about" exact component={AboutPage} />
+        <AdminRoute path="/admin" exact component={AdminDashboard} />
       </Switch>
     </BrowserRouter>
   )
