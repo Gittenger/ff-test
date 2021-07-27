@@ -1,11 +1,12 @@
 export const auth = {
-  authUser: function (user, options) {
+  authUser: function (user = {}, options) {
     return fetch(`http://localhost:8080/api/users/${options.authRoute}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify(user),
     })
       .then((res) => res.json())
