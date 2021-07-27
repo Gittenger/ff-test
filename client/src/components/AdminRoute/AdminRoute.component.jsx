@@ -13,7 +13,9 @@ const AdminRoute = ({ component: Component, ...rest }) => (
 			checkAuthToken() && checkAuthToken().user.role === 'admin' ? (
 				<Component {...props} />
 			) : (
-					<Redirect to={{pathname: '/', state: {from: props.location } }} />
+				<Redirect
+					to={{ pathname: '/login', state: { from: props.location } }}
+				/>
 			)
 		}
 	></Route>
