@@ -115,49 +115,8 @@ export const BottomImg = styled.div`
 	}
 `
 
-export const ContactTitle = styled(H2)`
-	margin-bottom: 1.5rem;
-	--scale: 0.8;
-`
-
-export const CTASectionText = styled.div`
-	text-align: center;
-	padding-top: 2rem;
-
-	${mobileM} {
-		${cssIndex.flexCenter}
-		flex-direction: column;
-	}
-
-	// line 1
-	& > :nth-child(1) {
-		margin-bottom: var(--m-XXXS);
-		white-space: nowrap;
-
-		${tabletL} {
-			white-space: normal;
-			margin-bottom: var(--m-S);
-		}
-
-		${mobileM} {
-			width: 50%;
-			margin-bottom: var(--m-XS);
-		}
-	}
-
-	// line 2
-	& > :nth-child(2) {
-		${PSmallStyles}
-		--scale: .55;
-		white-space: normal;
-		margin-right: var(--m-XXS);
-
-		${tabletL} {
-			display: block;
-			margin-right: 0;
-			margin-bottom: var(--m-XXXS);
-		}
-	}
+export const ContactLinks = styled.div`
+	${cssIndex.flexCenter}
 
 	// link
 	a,
@@ -165,10 +124,11 @@ export const CTASectionText = styled.div`
 	a:visited {
 		${H2Styles}
 		--scale: .5;
-		margin: 0;
-		text-decoration: underline;
-		color: var(--red);
-		transition: color 0.3s;
+		margin-right: var(--m-XS);
+		background-color: var(--grey);
+		color: var(--black);
+		padding: 0.8rem;
+		transition: all 0.3s;
 
 		${mobileXS} {
 			--scale: 0.4;
@@ -176,6 +136,7 @@ export const CTASectionText = styled.div`
 	}
 
 	a:hover {
-		color: var(--redDark);
+		color: var(--grey);
+		background-color: var(--red);
 	}
 `

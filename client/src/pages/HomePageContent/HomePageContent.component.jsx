@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Fade from 'react-reveal/Fade'
+import { Link } from 'react-router-dom'
 
 import CIndex from '../../components/components.index.js'
 
@@ -9,8 +10,7 @@ import {
 	HeroImg,
 	HeroTwo,
 	BottomImg,
-	ContactTitle,
-	CTASectionText,
+	ContactLinks,
 } from './HomePageContent.styles.jsx'
 
 import Hero from '../../assets/hero.jpeg'
@@ -50,6 +50,10 @@ const HomePageContent = () => {
 					</ImageBox>
 				</Fade>
 			</BottomImg>
+			<ContactLinks>
+				<Link to="/portfolio">See more</Link>
+				<Link to="/booking">Contact Us </Link>
+			</ContactLinks>
 		</HomePageContainer>
 	)
 }
