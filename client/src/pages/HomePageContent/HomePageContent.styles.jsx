@@ -1,14 +1,18 @@
 import styled from 'styled-components'
 import {
 	H2,
-	PStyles,
 	PSmallStyles,
 	H2Styles,
 } from '../../components/typography/typography.components.js'
 
-import { cssIndex, device } from '../../styles/css/utils.styles.js'
+import {
+	cssIndex,
+	device,
+	deviceHeight,
+} from '../../styles/css/utils.styles.js'
 
 const { tabletL, tabletM, tabletLand, mobileM, mobileXS } = device
+const { heightM } = deviceHeight
 
 export const HomePageContainer = styled.div`
 	${cssIndex.flexCenter}
@@ -24,7 +28,7 @@ export const HomePageContainer = styled.div`
 
 export const HeroContainer = styled.div`
 	width: 95%;
-	height: 60rem;
+	height: 82rem;
 	border-radius: var(--bRadSm);
 	margin-bottom: var(--m-L);
 	overflow: hidden;
@@ -39,6 +43,10 @@ export const HeroContainer = styled.div`
 
 	${tabletL} {
 		margin-bottom: var(--m-M);
+	}
+
+	${heightM} {
+		height: 60rem;
 	}
 `
 
@@ -61,7 +69,7 @@ export const HeroImg = styled.div`
 	}
 `
 
-export const PoemSection = styled.div`
+export const HeroTwo = styled.div`
 	font-family: var(--fontMain);
 	width: 95%;
 	margin-bottom: var(--m-S);
@@ -93,34 +101,7 @@ export const PoemSection = styled.div`
 	}
 `
 
-export const PoemContainer = styled.div`
-	${cssIndex.flexCenter}
-	flex-direction: column;
-	transition: font-size 0.2s;
-	font-weight: 400;
-
-	& > * {
-		white-space: nowrap;
-	}
-
-	& > :not(.final-line) {
-		${PStyles}
-		font-family: var(--fontSecondary);
-		--scale: 0.77;
-		font-style: italic;
-		line-height: 1.2;
-	}
-
-	& .final-line {
-		${PStyles}
-		font-family: var(--fontSecondary);
-		--scale: 1.1;
-		font-weight: bold;
-		color: var(--red);
-	}
-`
-
-export const CTASection = styled.div`
+export const BottomImg = styled.div`
 	${cssIndex.flexCenterCol}
 	margin-bottom: var(--m-XS);
 	width: 100%;
