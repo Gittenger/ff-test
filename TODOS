@@ -1,0 +1,15 @@
+Style admin page
+Media queries for gallery
+Media query for admin portal
+Double check all media queries
+Remove safety page for now -- ask Camden
+
+Other:
+Add password functionality to admin portal
+Create email on DNS
+Link email to back end
+Create a new mongodb DB with new email
+Create accounts for Austin/Doug
+Check sendgrid with this app
+Fix non-secure connection
+
