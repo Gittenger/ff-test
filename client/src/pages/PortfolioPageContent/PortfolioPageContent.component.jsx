@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import Carousel from 'react-gallery-carousel'
 import 'react-gallery-carousel/dist/index.css'
+import Fade from 'react-reveal/Fade'
 
 import {
   PortfolioPageContainer,
@@ -30,7 +30,9 @@ const Portfolio = () => {
 
   return (
     <PortfolioPageContainer>
-      <StyledCarousel images={images} />
+      <Fade>
+        <StyledCarousel images={images} />
+      </Fade>
     </PortfolioPageContainer>
   )
 }
