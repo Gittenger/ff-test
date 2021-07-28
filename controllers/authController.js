@@ -6,7 +6,7 @@ const AppError = require('../utils/appError')
 const catchAsync = require('../utils/catchAsync')
 const Email = require('../utils/email')
 
-const signToken = id =>
+const signToken = (id) =>
 	jwt.sign({ id }, process.env.JWT_SECRET, {
 		// env var is string, | 0 converts to int, thus seconds not ms -- 60 days
 		expiresIn: process.env.JWT_EXPIRES_IN | 0,
@@ -126,16 +126,14 @@ exports.logout = (req, res, next) => {
 	})
 }
 
-exports.restrictTo =
-	(...roles) =>
-	(req, res, next) => {
-		if (!roles.includes(req.user.role)) {
-			return next(
-				new AppError('You do not have permission to perform this action', 403)
-			)
-		}
-		next()
+exports.restrictTo = (...roles) => (req, res, next) => {
+	if (!roles.includes(req.user.role)) {
+		return next(
+			new AppError('You do not have permission to perform this action', 403)
+		)
 	}
+	next()
+}
 
 exports.updatePassword = catchAsync(async (req, res, next) => {
 	const user = await User.findById(req.user.id).select('+password')
@@ -164,9 +162,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
 	await user.save({ validateBeforeSave: false })
 
 	try {
-		const resetUrl = `${req.protocol}://${req.get(
-			'host'
-		)}/resetPassword/${resetToken}`
+		const resetUrl = `${req.protocol}://localhost:3000/reset-password/${resetToken}`
 
 		await new Email(user, resetUrl).sendPasswordReset()
 
