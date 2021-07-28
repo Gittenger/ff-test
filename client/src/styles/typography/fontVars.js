@@ -1,12 +1,13 @@
 import { css } from 'styled-components'
 
 import fontsIndex from '../../assets/fonts/index'
-const { yuseiMagic, oswald, montserrat } = fontsIndex
+const { orbitron, quicksand, karla } = fontsIndex
 
 export const fontVars = {
 	fontMain: css`
-		--fontMain: '${montserrat.name}', sans-serif;
-		--fontHeading: '${oswald.name}', sans-serif;
+		--fontMain: '${quicksand.name}', sans-serif;
+		--fontSecondary: '${karla.name}', sans-serif;
+		--fontHeading: '${orbitron.name}', sans-serif;
 		--globalScale: 1;
 	`,
 }

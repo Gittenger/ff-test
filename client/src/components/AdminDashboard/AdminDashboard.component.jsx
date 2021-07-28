@@ -14,6 +14,9 @@ const AdminDashboard = () => {
 				<li>
 					<Link to="/delete-images">Delete Images</Link>
 				</li>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
 			</ul>
 		</div>
 	)

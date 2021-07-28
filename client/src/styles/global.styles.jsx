@@ -9,12 +9,11 @@ ${resetCSS}
 
 body {
 	${({ theme: { css } }) => css.flexCenterCol};
-    font-size: 1.8rem;
+    font-size: 1.7rem;
  
-    background-color: ${({ theme: { colors } }) => colors.primary};
-    color:  ${({ theme: { colors } }) => colors.secondary};
-
     transition: background-color .3s, color .3s;
+
+    ${({ theme: { css } }) => css.scrollBarStyles};
 }
 
 #root {
@@ -23,7 +22,43 @@ body {
     /* set font vars in root */
     ${({ theme: { typography } }) => typography.fontVars.fontMain};
 
-    /* set shared typography styles */
+   /* Custom Variables */
+    /* Colors */
+    --red: ${({ theme: { colors } }) => colors.red};
+    --white: ${({ theme: { colors } }) => colors.white};
+    --grey: ${({ theme: { colors } }) => colors.greyLight};
+    --black: ${({ theme: { colors } }) => colors.black};
+    --redDark: ${({ theme: { colors } }) => colors.redDark};
+
+    /* Measurements */
+    --bRadSm: ${({ theme: { styles } }) => styles.borderRadiusSm};
+    --bRadM: ${({ theme: { styles } }) => styles.borderRadiusM};
+    --m-XXXS: ${({ theme: { styles } }) => styles.marginXXXSmall};
+    --m-XXS: ${({ theme: { styles } }) => styles.marginXXSmall};
+    --m-XS: ${({ theme: { styles } }) => styles.marginXSmall};
+    --m-S: ${({ theme: { styles } }) => styles.marginSmall};
+    --m-SM: ${({ theme: { styles } }) => styles.marginSmallMedium};
+    --m-M: ${({ theme: { styles } }) => styles.marginMedium};
+    --m-L: ${({ theme: { styles } }) => styles.marginLarge};
+
+    /* Shadows */
+    --shadowSub: ${({ theme: { styles } }) => styles.textShadowSubtitles};
+    --shadowTitle: ${({ theme: { styles } }) => styles.textShadowTitle};
+    --shadowBoxOne: ${({ theme: { styles } }) => styles.boxShadowFullOne};
+    --shadowBoxTwo: ${({ theme: { styles } }) => styles.boxShadowFullTwo};
+    --shadowBoxPart: ${({ theme: { styles } }) => styles.boxShadowPartialOne};
+    --shadowTitleBox: ${({ theme: { styles } }) => styles.boxShadowTitleBox};
+
+    /* Gradients */
+    --gradBg: ${({ theme: { gradient } }) => gradient.bg};
+    --gradBgMob: ${({ theme: { gradient } }) => gradient.bgMob};
+    --gradFooter: ${({ theme: { gradient } }) => gradient.footer};
+    --gradTitle: ${({ theme: { gradient } }) => gradient.title};
+    --gradForm: ${({ theme: { gradient } }) => gradient.form};
+}
+
+html {
+        /* set shared typography styles */
     ${({ theme: { typography } }) => typography.sharedStyles};
 }
 `

@@ -2,15 +2,22 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App.jsx'
+import GlobalStyles from './styles/global.styles.jsx'
 import PageProvider from './contexts/PageProvider.jsx'
+
+import { ThemeProvider } from 'styled-components'
+import theme from './styles/theme'
 
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
 	<React.StrictMode>
-		<PageProvider>
-			<App />
-		</PageProvider>
+		<ThemeProvider theme={theme}>
+			<GlobalStyles />
+			<PageProvider>
+				<App />
+			</PageProvider>
+		</ThemeProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
 )
