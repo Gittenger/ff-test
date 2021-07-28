@@ -42,7 +42,7 @@ export const BackgroundContainer = styled.div`
 	--navWidth: 23rem;
 	--titleHeight: 12rem;
 	--logoHeight: 13rem;
-	--footerHeight: 10rem;
+	--footerHeight: 17rem;
 
 	${laptopM} {
 		--titleHeight: 10rem;
@@ -82,7 +82,7 @@ export const BackgroundContainer = styled.div`
 
 export const ContentContainer = styled.div`
 	width: calc(100vw - var(--navWidth));
-	min-height: calc(100vh - var(--footerHeight));
+	min-height: 89vh;
 	margin-left: var(--navWidth);
 	margin-right: 0;
 	margin-top: var(--titleHeight);
@@ -90,6 +90,7 @@ export const ContentContainer = styled.div`
 	flex-direction: column;
 	background: none;
 	color: var(--white);
+	padding-bottom: 15rem;
 
 	h1,
 	h2,

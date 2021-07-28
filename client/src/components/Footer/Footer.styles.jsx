@@ -8,17 +8,19 @@ const { mobileMM, mobileXS } = device
 
 export const FooterContainer = styled.footer`
 	${cssIndex.flexCenter}
+	position: absolute;
+	bottom: 0;
 	font-family: var(--fontMain);
 	flex-direction: column;
 	width: 100%;
-	min-height: calc(var(--footerHeight) + 3rem);
+	min-height: var(--footerHeight);
 	background: var(--gradFooter);
 	border-radius: var(--bRadSm);
 `
 
 export const Copyright = styled.div`
 	font-size: 1.4rem;
-	margin-bottom: var(--m-XS);
+	margin-bottom: var(--m-M);
 
 	${mobileMM} {
 		font-size: 1.2rem;
