@@ -72,7 +72,7 @@ const Login = () => {
   )
 
   return loggedIn ? (
-    <Redirect to="/" />
+    <Redirect to="/admin" />
   ) : (
     <>
       <h1>Login Page</h1>
