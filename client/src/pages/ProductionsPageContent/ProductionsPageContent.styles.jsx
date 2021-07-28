@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
-import { device } from '../../styles/css/utils.styles.js'
+import { device, deviceMin } from '../../styles/css/utils.styles.js'
 
 const { mobileMM, tabletLand } = device
+const { minDesktop } = deviceMin
 
 export const ProductionsPageContentContainer = styled.div`
 	${({ theme: { css } }) => css.flexCenterCol};
@@ -16,6 +17,10 @@ export const ProductionsPageContentContainer = styled.div`
 	.image-box {
 		width: 95%;
 		margin-bottom: var(--m-M);
+	}
+
+	${minDesktop} {
+		width: 85%;
 	}
 
 	${tabletLand} {
