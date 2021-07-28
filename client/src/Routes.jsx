@@ -8,6 +8,9 @@ import {
   PortfolioPage,
   LoginPage,
   BookingPage,
+  SafetyPage,
+  ProductionsPage,
+  LegalPage,
 } from './pages/pages-index.js'
 
 const Routes = () => {
@@ -19,6 +22,9 @@ const Routes = () => {
         <Route path="/login" exact component={LoginPage} />
         <Route path="/portfolio" exact component={PortfolioPage} />
         <Route path="/booking" exact component={BookingPage} />
+        <Route path="/safety" exact component={SafetyPage} />
+        <Route path="/productions" exact component={ProductionsPage} />
+        <Route path="/legal" exact component={LegalPage} />
         <AdminRoute path="/admin" exact component={AdminDashboard} />
         <AdminRoute path="/upload-images" exact component={UploadImage} />
         <AdminRoute path="/delete-images" exact component={DeleteImage} />
