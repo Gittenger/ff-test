@@ -20,6 +20,7 @@ const Routes = () => {
     UploadImage,
     DeleteImage,
     ForgotPassword,
+    ResetPassword,
   } = CIndex
   return (
     <BrowserRouter>
@@ -35,6 +36,11 @@ const Routes = () => {
         <AdminRoute path="/upload-images" exact component={UploadImage} />
         <AdminRoute path="/delete-images" exact component={DeleteImage} />
         <AdminRoute path="/forgot-password" exact component={ForgotPassword} />
+        <AdminRoute
+          path="/reset-password/:token"
+          exact
+          component={ResetPassword}
+        />
       </Switch>
     </BrowserRouter>
   )

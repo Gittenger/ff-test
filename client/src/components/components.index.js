@@ -13,12 +13,13 @@ import NavDesk from "./NavDesk/NavDesk.component.jsx"
 import NavList from "./NavList/NavList.component.jsx"
 import NavMobile from "./NavMobile/NavMobile.component.jsx"
 import Poem from "./Poem/Poem.component.jsx"
+import ResetPassword from "./ResetPassword/ResetPassword.component.jsx"
 import Title from "./Title/Title.component.jsx"
 import ToggleNavButton from "./ToggleNavButton/ToggleNavButton.component.jsx"
 import UploadImage from "./UploadImage/UploadImage.component.jsx"
 import TComp from "./typography/typography.components.js"
 export const CIndex = {
-		AdminDashboard,AdminMenu,AdminRoute,BookingForm,Checkbox,DeleteImage,Footer,ForgotPassword,ImageBox,Layout,Logo,NavDesk,NavList,NavMobile,Poem,Title,ToggleNavButton,UploadImage, TComp
+		AdminDashboard,AdminMenu,AdminRoute,BookingForm,Checkbox,DeleteImage,Footer,ForgotPassword,ImageBox,Layout,Logo,NavDesk,NavList,NavMobile,Poem,ResetPassword,Title,ToggleNavButton,UploadImage, TComp
 	}
 	export default CIndex
 	
