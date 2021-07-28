@@ -7,7 +7,14 @@ export const sharedStyles = css`
 	h4,
 	h5,
 	h6 {
-		color: blue;
+		font-family: var(--fontHeading);
+		color: var(--white);
+		font-weight: 400;
+	}
+
+	body,
+	p {
+		font-family: var(--fontMain);
 	}
 `
 

@@ -56,6 +56,4 @@ export const TitleContainer = styled.div`
 		}
 	}
 `
-export const TitleText = styled(MainTitle)`
-	font-family: var(--fontHeading);
-`
+export const TitleText = styled(MainTitle)``
