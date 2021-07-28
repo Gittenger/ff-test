@@ -12,6 +12,22 @@ export const auth = {
       .then((res) => res.json())
       .catch((err) => console.error(err))
   },
+  logout: function () {
+    localStorage.removeItem('jwt')
+    return fetch('http://localhost:8080/api/users/logout', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+
+      credentials: 'include',
+    })
+      .then(() => {
+        window.location.reload()
+      })
+      .catch((err) => console.error(err))
+  },
   setAuthToken: function (data, next) {
     if (window !== 'undefined') {
       localStorage.setItem('jwt', JSON.stringify(data))
