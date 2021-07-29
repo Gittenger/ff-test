@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import {} from './UploadImage.styles'
+import { UploadImageContainer } from './UploadImage.styles'
 import auth from '../../utils/auth.js'
+import CIndex from '../components.index.js'
 
 const { checkAuthToken } = auth
 
 const UploadImage = () => {
+	const {
+		TComp: { P },
+	} = CIndex
 	const { token } = checkAuthToken()
 	const [selectedFile, setSelectedFile] = useState(null)
 
@@ -22,7 +27,7 @@ const UploadImage = () => {
 			body: formData,
 		})
 			.then((res) => res.json())
-			.then((res) => {
+			.then(() => {
 				window.location.reload()
 			})
 			.catch((err) => console.error(err))
@@ -40,10 +45,11 @@ const UploadImage = () => {
 	)
 
 	return (
-		<div>
-			<p>Upload Image</p>
+		<UploadImageContainer>
+			<P>Upload Image:</P>
 			{ImageForm()}
-		</div>
+			<Link to="/admin">⇽ Back to admin</Link>
+		</UploadImageContainer>
 	)
 }
 
