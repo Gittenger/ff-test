@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 
-import {} from './DeleteImage.styles'
+import { DeleteImageContainer, GridContainer } from './DeleteImage.styles'
 import auth from '../../utils/auth.js'
 
 const { checkAuthToken } = auth
@@ -55,16 +55,19 @@ const DeleteImage = () => {
 	}
 
 	return (
-		<div>
-			{images.map(({ name, src, id }) => (
-				<div key={id}>
-					<img src={src} alt="" />
-					<button onClick={handleDelete} name={name} id={id}>
-						Delete
-					</button>
-				</div>
-			))}
-		</div>
+		<DeleteImageContainer>
+			<h2>Delete Images:</h2>
+			<GridContainer>
+				{images.map(({ name, src, id }) => (
+					<div key={id}>
+						<img src={src} alt="" />
+						<button onClick={handleDelete} name={name} id={id}>
+							Delete
+						</button>
+					</div>
+				))}
+			</GridContainer>
+		</DeleteImageContainer>
 	)
 }
 export default DeleteImage
