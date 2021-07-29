@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-
-import auth from '../../utils/auth.js'
+import { Link } from 'react-router-dom'
 
 import {
 	ChangePasswordContainer,
@@ -8,9 +7,16 @@ import {
 	SubmitButton,
 } from './ChangePassword.styles'
 
+import CIndex from '../components.index.js'
+
+import auth from '../../utils/auth.js'
+
 const { checkAuthToken } = auth
 
 const ChangePassword = () => {
+	const {
+		TComp: { P },
+	} = CIndex
 	const [values, setValues] = useState({
 		password: '',
 		passwordConfirm: '',
@@ -62,6 +68,7 @@ const ChangePassword = () => {
 
 	return (
 		<ChangePasswordContainer>
+			<P>Change current password:</P>
 			<form>
 				<Row>
 					<label for="currentPassword">Current password:</label>
@@ -94,6 +101,7 @@ const ChangePassword = () => {
 			<SubmitButton onClick={handleSubmit}>Update password</SubmitButton>
 			{error && <p style={{ color: 'red' }}> {error}</p>}
 			{successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
+			<Link to="/admin">⇽ Back to admin</Link>
 		</ChangePasswordContainer>
 	)
 }
