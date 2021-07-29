@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import auth from '../../utils/auth.js'
 
+import { Form, Row } from './LoginPageContent.styles'
+
 const { authUser, setAuthToken } = auth
 
 const Login = () => {
@@ -54,29 +56,29 @@ const Login = () => {
   )
 
   const LoginForm = () => (
-    <form>
-      <div>
+    <Form>
+      <Row>
         <label>Email</label>
         <input type="email" value={email} onChange={handleChange('email')} />
-      </div>
-      <div>
+      </Row>
+      <Row>
         <label>Password</label>
         <input
           type="password"
           value={password}
           onChange={handleChange('password')}
         />
-        <button onClick={handleSubmit}>Submit</button>
-      </div>
-    </form>
+      </Row>
+    </Form>
   )
 
   return loggedIn ? (
     <Redirect to="/admin" />
   ) : (
     <>
-      <h1>Login Page</h1>
+      <h2>Login:</h2>
       {LoginForm()}
+      <button onClick={handleSubmit}>Submit</button>
       {showError()}
     </>
   )
