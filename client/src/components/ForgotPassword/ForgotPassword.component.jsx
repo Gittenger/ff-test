@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import {
 	ForgotPasswordContainer,
@@ -63,6 +64,7 @@ const ForgotPassword = () => {
 			<SubmitButton onClick={handleSubmit}>Submit</SubmitButton>
 			{error && <p style={{ color: 'red' }}> {error}</p>}
 			{successMsg && <p style={{ color: 'green' }}>{successMsg}</p>}
+			<Link to="/admin">⇽ Back to admin</Link>
 		</ForgotPasswordContainer>
 	)
 }

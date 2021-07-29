@@ -14,6 +14,21 @@ export const ForgotPasswordContainer = styled.div`
 	& > *:first-child {
 		margin-bottom: var(--m-S);
 	}
+
+	a,
+	a:link,
+	a:visited {
+		text-decoration: underline;
+		transition: color 0.2s;
+
+		&:hover {
+			color: var(--red);
+		}
+
+		&:last-child {
+			margin-top: var(--m-XS);
+		}
+	}
 `
 
 export const Form = styled.form`
