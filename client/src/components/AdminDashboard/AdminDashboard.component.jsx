@@ -38,7 +38,7 @@ const AdminDashboard = () => {
 						<Link to="/forgot-password">Forgot password</Link>
 					</li>
 					<li>
-						<a href="/">Change password</a>
+						<Link to="/change-password">Change password</Link>
 					</li>
 				</RowTwo>
 			</Links>

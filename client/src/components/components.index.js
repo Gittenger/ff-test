@@ -2,6 +2,7 @@ import AdminDashboard from "./AdminDashboard/AdminDashboard.component.jsx"
 import AdminMenu from "./AdminMenu/AdminMenu.component.jsx"
 import AdminRoute from "./AdminRoute/AdminRoute.component.jsx"
 import BookingForm from "./BookingForm/BookingForm.component.jsx"
+import ChangePassword from "./ChangePassword/ChangePassword.component.jsx"
 import Checkbox from "./Checkbox/Checkbox.component.jsx"
 import DeleteImage from "./DeleteImage/DeleteImage.component.jsx"
 import Footer from "./Footer/Footer.component.jsx"
@@ -19,7 +20,7 @@ import ToggleNavButton from "./ToggleNavButton/ToggleNavButton.component.jsx"
 import UploadImage from "./UploadImage/UploadImage.component.jsx"
 import TComp from "./typography/typography.components.js"
 export const CIndex = {
-		AdminDashboard,AdminMenu,AdminRoute,BookingForm,Checkbox,DeleteImage,Footer,ForgotPassword,ImageBox,Layout,Logo,NavDesk,NavList,NavMobile,Poem,ResetPassword,Title,ToggleNavButton,UploadImage, TComp
+		AdminDashboard,AdminMenu,AdminRoute,BookingForm,ChangePassword,Checkbox,DeleteImage,Footer,ForgotPassword,ImageBox,Layout,Logo,NavDesk,NavList,NavMobile,Poem,ResetPassword,Title,ToggleNavButton,UploadImage, TComp
 	}
 	export default CIndex
 	
