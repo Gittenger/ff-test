@@ -12,8 +12,16 @@ export const DeleteImageContainer = styled.div`
 	min-height: 100vh;
 	padding-top: var(--m-L);
 
-	h2 {
-		margin-bottom: var(--m-M);
+	a,
+	a:link,
+	a:visited {
+		margin: var(--m-S) auto;
+		text-decoration: underline;
+		transition: color 0.2s;
+
+		&:hover {
+			color: var(--red);
+		}
 	}
 `
 
