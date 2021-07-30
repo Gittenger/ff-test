@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { DeleteImageContainer, GridContainer } from './DeleteImage.styles'
 import auth from '../../utils/auth.js'
+import { API, PUBLIC } from '../../env.js'
 
 const { checkAuthToken } = auth
 
@@ -11,7 +12,7 @@ const DeleteImage = () => {
 	const [images, setImages] = useState([])
 
 	const getImages = useCallback(() => {
-		fetch('http://localhost:8080/api/images', {
+		fetch(`${API}/images`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json',
@@ -20,10 +21,10 @@ const DeleteImage = () => {
 			.then((res) => res.json())
 			.then(({ images }) => {
 				setImages(
-					images.map((img) => ({
-						name: img.name,
-						src: `http://localhost:8080/img/${img.name}`,
-						id: img._id,
+					images.map(({ name, _id }) => ({
+						name,
+						src: `${PUBLIC}/img/${name}`,
+						id: _id,
 					}))
 				)
 			})
@@ -39,7 +40,7 @@ const DeleteImage = () => {
 			id,
 		}
 
-		fetch('http://localhost:8080/api/images/delete', {
+		fetch(`${API}/images/delete`, {
 			method: 'DELETE',
 			headers: {
 				Accept: 'application/json',

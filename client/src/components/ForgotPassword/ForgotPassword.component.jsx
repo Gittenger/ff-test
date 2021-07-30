@@ -7,7 +7,9 @@ import {
 	Form,
 	SubmitButton,
 } from './ForgotPassword.styles'
+
 import CIndex from '../components.index.js'
+import { API } from '../../env.js'
 
 const ForgotPassword = () => {
 	const { TComp } = CIndex
@@ -23,7 +25,7 @@ const ForgotPassword = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
-		fetch('http://localhost:8080/api/users/forgotPassword', {
+		fetch(`${API}/users/forgotPassword`, {
 			method: 'POST',
 			headers: {
 				Accept: 'application/json',

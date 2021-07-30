@@ -8,6 +8,8 @@ import {
   StyledCarousel,
 } from './PortfolioPageContent.styles'
 
+import { API } from '../../env.js'
+
 const Portfolio = () => {
   const [images, setImages] = useState([])
   const [navMobileActive, setNavMobileActive] = useState(false)
@@ -36,7 +38,7 @@ const Portfolio = () => {
   }, [navMobileActive, checkNavMobileActive, mobileBreakpoint])
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/images', {
+    fetch(`${API}/images`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

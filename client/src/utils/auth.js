@@ -1,6 +1,8 @@
+import { API } from '../env'
+
 export const auth = {
   authUser: function (user = {}, options) {
-    return fetch(`http://localhost:8080/api/users/${options.authRoute}`, {
+    return fetch(`${API}/users/${options.authRoute}`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -14,7 +16,7 @@ export const auth = {
   },
   logout: function () {
     localStorage.removeItem('jwt')
-    return fetch('http://localhost:8080/api/users/logout', {
+    return fetch(`${API}/users/logout`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
