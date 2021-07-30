@@ -1,12 +1,23 @@
-Media queries for gallery
-Double check all media queries
-Remove safety page for now -- ask Camden
-
 Other:
-Create email on DNS
-Link email to back end
+Create Camden's email
+Link email to back end env files
 Create a new mongodb DB with new email
-Create accounts for Austin/Doug
+Add MongoDB instructions to Doc
 Check sendgrid with this app
-Fix non-secure connection
 
+Later:
+Delete All feature
+Research for compatible fade in for gallery
+Reorder photos
+Content management across site
+
+
+DEPLOYMENT
+Set up AWS account.
+Create EC2 instance -- fedora, ubuntu
+Install Node using NVM
+Install git, clone repo
+Install dependencies
+Configure security group settings for public inbound traffic
+Route traffic from custom domain to the EC2 instance.
+Create secure connection using ACM for AWS
