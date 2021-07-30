@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import 'react-gallery-carousel/dist/index.css'
+
+import { sizes } from '../../styles/css/utils.styles.js'
 
 import {
   PortfolioPageContainer,
@@ -8,6 +10,30 @@ import {
 
 const Portfolio = () => {
   const [images, setImages] = useState([])
+  const [navMobileActive, setNavMobileActive] = useState(false)
+
+  // BREAKPOINT
+  const { tabletMM } = sizes
+  const mobileBreakpoint = parseInt(tabletMM.match(/[0-9]+/)[0])
+
+  // WINDOW WIDTH EVENT LISTENER
+  const checkNavMobileActive = useCallback(() => {
+    if (window.innerWidth <= mobileBreakpoint) {
+      setNavMobileActive(true)
+    } else setNavMobileActive(false)
+  }, [mobileBreakpoint])
+
+  // ON COMPONENT RENDER
+  useEffect(() => {
+    checkNavMobileActive()
+    if (window.screen.width <= mobileBreakpoint) {
+      setNavMobileActive(true)
+    }
+    window.addEventListener('resize', checkNavMobileActive)
+    return () => {
+      window.removeEventListener('resize', checkNavMobileActive)
+    }
+  }, [navMobileActive, checkNavMobileActive, mobileBreakpoint])
 
   useEffect(() => {
     fetch('http://localhost:8080/api/images', {
@@ -30,7 +56,15 @@ const Portfolio = () => {
 
   return (
     <PortfolioPageContainer>
-      <StyledCarousel images={images} isAutoPlaying={true} />
+      <StyledCarousel
+        images={images}
+        isAutoPlaying={true}
+        hasIndexBoard={false}
+        hasThumbnailsAtMax={false}
+        hasThumbnails={navMobileActive ? false : true}
+        hasRightButton={navMobileActive ? 'bottomRight' : 'centerRight'}
+        hasLeftButton={navMobileActive ? 'bottomLeft' : 'centerLeft'}
+      />
     </PortfolioPageContainer>
   )
 }
