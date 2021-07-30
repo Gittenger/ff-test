@@ -3,7 +3,7 @@ import PageContext from '../contexts/PageContext.js'
 
 import CIndex from '../components/components.index.js'
 
-const MAIN_TITLE = 'Test Website'
+import { MAIN_TITLE } from '../env.js'
 
 const PageComponent = ({ title, Component, ...props }) => {
   const { Layout } = CIndex
