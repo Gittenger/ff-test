@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-import { cssIndex } from '../../styles/css/utils.styles.js'
+import { cssIndex, device } from '../../styles/css/utils.styles.js'
+
+const { mobileM } = device
 
 export const ForgotPasswordContainer = styled.div`
 	${cssIndex.flexCenterCol}
@@ -9,7 +11,7 @@ export const ForgotPasswordContainer = styled.div`
 	color: var(--white);
 	min-width: 100vw;
 	min-height: 100vh;
-	padding-top: var(--m-L);
+	padding: var(--m-L) 1.5rem;
 
 	& > *:first-child {
 		margin-bottom: var(--m-S);
@@ -35,6 +37,14 @@ export const Form = styled.form`
 	margin-bottom: var(--m-XS);
 	label {
 		margin-right: var(--m-XS);
+	}
+
+	${mobileM} {
+		${cssIndex.flexCenterCol}
+
+		label {
+			margin-bottom: var(--m-XS);
+		}
 	}
 `
 
