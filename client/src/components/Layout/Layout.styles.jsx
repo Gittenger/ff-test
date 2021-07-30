@@ -82,7 +82,7 @@ export const BackgroundContainer = styled.div`
 
 export const ContentContainer = styled.div`
 	width: calc(100vw - var(--navWidth));
-	min-height: 89vh;
+	min-height: 95vh;
 	margin-left: var(--navWidth);
 	margin-right: 0;
 	margin-top: var(--titleHeight);
