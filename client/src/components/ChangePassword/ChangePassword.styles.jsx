@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { cssIndex } from '../../styles/css/utils.styles.js'
+import { cssIndex, device } from '../../styles/css/utils.styles.js'
+const { mobileMM } = device
 
 export const ChangePasswordContainer = styled.div`
 	${cssIndex.flexCenterCol}
@@ -40,6 +41,10 @@ export const Row = styled.div`
 	justify-items: center;
 	overflow: hidden;
 
+	${mobileMM} {
+		grid-template-columns: 1fr;
+	}
+
 	textarea,
 	input {
 		font-family: inherit;
@@ -54,6 +59,10 @@ export const Row = styled.div`
 	& > :first-child {
 		justify-self: end;
 		margin-right: 2rem;
+
+		${mobileMM} {
+			justify-self: start;
+		}
 	}
 
 	// input
