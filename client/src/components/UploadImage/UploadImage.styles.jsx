@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-import { cssIndex } from '../../styles/css/utils.styles.js'
+import { cssIndex, device } from '../../styles/css/utils.styles.js'
+
+const { tabletMM } = device
 
 export const UploadImageContainer = styled.div`
 	${cssIndex.flexCenterCol}
@@ -11,16 +13,33 @@ export const UploadImageContainer = styled.div`
 	min-height: 100vh;
 	padding-top: var(--m-L);
 
+	p {
+		margin-bottom: var(--m-S);
+	}
+
 	form {
+		${cssIndex.flexCenterCol}
 		margin-bottom: var(--m-M);
 
 		input {
 			cursor: pointer;
+			margin-bottom: var(--m-S);
 		}
 	}
 
 	button {
 		cursor: pointer;
+		padding: 0.8rem;
+		margin-top: var(--m-XXS);
+
+		background-color: var(--grey);
+		color: var(--black);
+		transition: all 0.3s;
+
+		&:hover {
+			color: var(--grey);
+			background-color: var(--red);
+		}
 	}
 
 	a,
@@ -31,6 +50,22 @@ export const UploadImageContainer = styled.div`
 
 		&:hover {
 			color: var(--red);
+		}
+	}
+
+	${tabletMM} {
+		p {
+			margin-bottom: var(--m-XS);
+		}
+
+		form {
+			input {
+				margin-bottom: var(--m-XS);
+			}
+		}
+
+		button {
+			padding: 0.5rem;
 		}
 	}
 `
