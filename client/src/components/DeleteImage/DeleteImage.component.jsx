@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 
 import { DeleteImageContainer, GridContainer } from './DeleteImage.styles'
 import auth from '../../utils/auth.js'
@@ -57,6 +58,7 @@ const DeleteImage = () => {
 	return (
 		<DeleteImageContainer>
 			<h2>Delete Images:</h2>
+			<Link to="/admin">⇽ Back to admin</Link>
 			<GridContainer>
 				{images.map(({ name, src, id }) => (
 					<div key={id}>
@@ -67,6 +69,7 @@ const DeleteImage = () => {
 					</div>
 				))}
 			</GridContainer>
+			<Link to="/admin">⇽ Back to admin</Link>
 		</DeleteImageContainer>
 	)
 }
