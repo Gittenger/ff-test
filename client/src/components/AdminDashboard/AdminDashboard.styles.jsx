@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-import { cssIndex } from '../../styles/css/utils.styles.js'
+import { cssIndex, device } from '../../styles/css/utils.styles.js'
+
+const { tabletMM } = device
 
 export const AdminDashboardContainer = styled.div`
 	${cssIndex.flexCenterCol}
@@ -8,27 +10,37 @@ export const AdminDashboardContainer = styled.div`
 	color: var(--white);
 	min-width: 100vw;
 	min-height: 100vh;
-	padding-top: var(--m-L);
+	overflow: hidden;
+	padding-bottom: var(--m-L);
+
+	& > h2 {
+		margin-top: var(--m-L);
+	}
 `
 
 export const Links = styled.div`
 	${cssIndex.flexCenterCol}
-
 	padding-top: var(--m-M);
+	width: 100%;
 
-	li {
-		margin-right: var(--m-XS);
+	& > ul {
+		width: 40%;
+
+		${tabletMM} {
+			width: 60%;
+		}
 	}
 
 	// link
 	a,
 	a:link,
 	a:visited {
+		white-space: nowrap;
 		cursor: pointer;
 		margin-right: var(--m-XS);
+		padding: 0.7rem;
 		background-color: var(--grey);
 		color: var(--black);
-		padding: 1rem;
 		transition: all 0.3s;
 	}
 
@@ -39,12 +51,21 @@ export const Links = styled.div`
 `
 
 export const RowOne = styled.ul`
-	${cssIndex.flexCenter}
-
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	grid-gap: 4.5rem;
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
 	margin-bottom: var(--m-L);
 `
 
 export const RowTwo = styled.ul`
-	${cssIndex.flexCenter}
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	grid-gap: 4.5rem;
+	justify-items: center;
+	justify-content: center;
 	padding-top: var(--m-M);
 `
