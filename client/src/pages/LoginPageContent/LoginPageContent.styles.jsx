@@ -1,5 +1,12 @@
 import styled from 'styled-components'
-import { cssIndex } from '../../styles/css/utils.styles.js'
+import { cssIndex, device } from '../../styles/css/utils.styles.js'
+
+const { mobileMM, mobileS, mobileXS } = device
+
+export const LoginPageContentContainer = styled.div`
+  ${cssIndex.flexCenterCol}
+  width: 100vw;
+`
 
 export const Form = styled.form`
   ${cssIndex.flexCenterCol}
@@ -41,5 +48,17 @@ export const Row = styled.div`
     margin: 0;
     padding: 0 0.5rem;
     color: black;
+
+    ${mobileMM} {
+      min-width: 17rem;
+    }
+
+    ${mobileS} {
+      min-width: 15rem;
+    }
+
+    ${mobileXS} {
+      min-width: 13rem;
+    }
   }
 `

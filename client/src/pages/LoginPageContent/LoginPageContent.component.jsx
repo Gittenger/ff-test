@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import auth from '../../utils/auth.js'
 
-import { Form, Row } from './LoginPageContent.styles'
+import { Form, Row, LoginPageContentContainer } from './LoginPageContent.styles'
 
 const { authUser, setAuthToken } = auth
 
@@ -75,12 +75,12 @@ const Login = () => {
   return loggedIn ? (
     <Redirect to="/admin" />
   ) : (
-    <>
+    <LoginPageContentContainer>
       <h2>Login:</h2>
       {LoginForm()}
       <button onClick={handleSubmit}>Submit</button>
       {showError()}
-    </>
+    </LoginPageContentContainer>
   )
 }
 
