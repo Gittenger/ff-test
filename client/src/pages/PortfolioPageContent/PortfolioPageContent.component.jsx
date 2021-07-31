@@ -8,7 +8,7 @@ import {
   StyledCarousel,
 } from './PortfolioPageContent.styles'
 
-import { API } from '../../env.js'
+import { API, PUBLIC } from '../../env.js'
 
 const Portfolio = () => {
   const [images, setImages] = useState([])
@@ -48,7 +48,7 @@ const Portfolio = () => {
       .then(({ images }) => {
         setImages(
           images.map((img) => ({
-            src: `http://localhost:8080/img/${img.name}`,
+            src: `${PUBLIC}/img/${img.name}`,
           }))
         )
       })

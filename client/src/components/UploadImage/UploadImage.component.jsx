@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { UploadImageContainer } from './UploadImage.styles'
 import auth from '../../utils/auth.js'
 import CIndex from '../components.index.js'
+import { API } from '../../env.js'
 
 const { checkAuthToken } = auth
 
@@ -19,7 +20,7 @@ const UploadImage = () => {
 		const formData = new FormData()
 		formData.append('image', selectedFile)
 
-		fetch(`http://localhost:8080/api/images/upload`, {
+		fetch(`${API}/images/upload`, {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${token}`,
