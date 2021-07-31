@@ -8,8 +8,8 @@ import {
 } from './ChangePassword.styles'
 
 import CIndex from '../components.index.js'
-
 import auth from '../../utils/auth.js'
+import { API } from '../../env.js'
 
 const { checkAuthToken } = auth
 
@@ -42,7 +42,7 @@ const ChangePassword = () => {
 	}
 
 	const handleSubmit = (e) => {
-		fetch(`http://localhost:8080/api/users/updatePassword`, {
+		fetch(`${API}/users/updatePassword`, {
 			method: 'PATCH',
 			headers: {
 				Accept: 'application/json',
