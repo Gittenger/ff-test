@@ -13,11 +13,6 @@ Content management across site
 
 
 DEPLOYMENT
-Set up AWS account.
-Create EC2 instance -- fedora, ubuntu
-Install Node using NVM
-Install git, clone repo
-Install dependencies
-Configure security group settings for public inbound traffic
+Create static EIP
 Route traffic from custom domain to the EC2 instance.
 Create secure connection using ACM for AWS
